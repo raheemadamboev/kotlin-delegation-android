@@ -9,9 +9,11 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import xyz.teamgravity.kotlindelegationandroid.ui.theme.KotlinDelegationAndroidTheme
 
-class Main : ComponentActivity() {
+class Main : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImp() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        registerLifecycleOwner(this)
         setContent {
             KotlinDelegationAndroidTheme {
                 Surface(
