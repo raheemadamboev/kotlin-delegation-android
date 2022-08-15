@@ -12,7 +12,7 @@ import xyz.teamgravity.kotlindelegationandroid.ui.theme.KotlinDelegationAndroidT
 
 class Main : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImp(), DeepLinkHandler by DeepLinkHandlerImpl() {
 
-    private val shit by lazy {
+    private val shit: String by lazy {
         println("raheem: initializing shit")
         "Shamsiddin"
     }
