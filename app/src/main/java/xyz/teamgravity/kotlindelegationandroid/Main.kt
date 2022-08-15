@@ -1,5 +1,6 @@
 package xyz.teamgravity.kotlindelegationandroid
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -9,7 +10,7 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import xyz.teamgravity.kotlindelegationandroid.ui.theme.KotlinDelegationAndroidTheme
 
-class Main : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImp() {
+class Main : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImp(), DeepLinkHandler by DeepLinkHandlerImpl() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,5 +25,10 @@ class Main : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImp() {
                 }
             }
         }
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        handleDeepLink(this, intent)
     }
 }
