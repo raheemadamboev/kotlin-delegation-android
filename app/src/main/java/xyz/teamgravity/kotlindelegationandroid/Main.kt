@@ -12,9 +12,16 @@ import xyz.teamgravity.kotlindelegationandroid.ui.theme.KotlinDelegationAndroidT
 
 class Main : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImp(), DeepLinkHandler by DeepLinkHandlerImpl() {
 
+    private val shit: String by lazy {
+        println("raheem: initializing shit")
+        "Shit"
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         registerLifecycleOwner(this)
+        println("raheem: shit: $shit")
+        println("raheem: shit: $shit")
         setContent {
             KotlinDelegationAndroidTheme {
                 Surface(
