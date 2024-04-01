@@ -14,7 +14,7 @@ class Main : ComponentActivity(), AnalyticsLogger by AnalyticsLoggerImp(), DeepL
 
     private val shit: String by lazy {
         println("raheem: initializing shit")
-        "Shamsiddin"
+        "Shit"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
